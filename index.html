@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eaa0b1">
+  <meta name="description" content="Invitación a los XV de Greta — 12 de diciembre de 2026">
+  <title>Mis XV Greta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <section class="sheet" aria-label="Portada de la invitación">
+      <img src="assets/portada.png" alt="Mis XV Greta" width="943" height="1668">
+    </section>
+
+    <section class="sheet countdown-sheet" aria-labelledby="countdown-title">
+      <img src="assets/cuenta-regresiva-limpia.png" alt="Flores rosas sobre un fondo satinado" width="943" height="1668">
+      <div class="petal-rain" id="petalRain" aria-hidden="true"></div>
+      <h1 id="countdown-title" class="sr-only">Cuenta regresiva para los XV de Greta</h1>
+      <div class="countdown" aria-live="polite" aria-atomic="true">
+        <span id="days">00</span><span id="hours">00</span><span id="minutes">00</span><span id="seconds">00</span>
+      </div>
+    </section>
+
+    <section class="sheet scratch-section" aria-label="Fecha y hora">
+      <img src="assets/fecha.png" alt="Sábado 12 de diciembre de 2026 a las 21 horas" width="943" height="1668">
+      <div class="scratch-card" id="scratchCard">
+        <canvas id="scratchCanvas" tabindex="0" role="button" aria-label="Deslizá el dedo para descubrir la fecha"></canvas>
+        <span class="sr-only">Deslizá el dedo por la tarjeta para descubrir la fecha. También podés presionar Enter.</span>
+      </div>
+      <div class="scratch-celebration" id="scratchCelebration" aria-hidden="true"></div>
+      <button class="hotspot calendar-hotspot" id="calendarButton" aria-label="Agregar la fiesta al calendario"></button>
+    </section>
+
+    <section class="sheet" aria-label="Cómo llegar">
+      <img src="assets/ubicacion.png" alt="Espacio Magnolia, Avenida del Libertador 2450, Buenos Aires" width="943" height="1668">
+      <button class="hotspot location-hotspot" data-open="locationDialog" aria-label="Ver opciones para llegar"></button>
+    </section>
+
+    <section class="sheet dress-section" aria-label="Código de vestimenta">
+      <img src="assets/dress-code.png" alt="Dress code elegante. El rosa está reservado para Greta" width="943" height="1668">
+    </section>
+
+    <section class="sheet gift-section" aria-label="Regalos">
+      <img src="assets/regalos.png" alt="Tu presencia es mi mejor regalo. Si querés hacerme un presente, podés ver los datos" width="943" height="1668">
+      <button class="hotspot gift-hotspot" data-open="giftDialog" aria-label="Ver datos para regalos"></button>
+    </section>
+
+    <section class="sheet" aria-label="Bloomkeep">
+      <img src="assets/bloomkeep.png" alt="Bloomkeep, la red social de mis XV. Compartí fotos, mensajes y recuerdos" width="943" height="1668">
+      <button class="hotspot bloom-hotspot" data-open="bloomDialog" aria-label="Ingresar a Bloomkeep"></button>
+    </section>
+
+    <section class="sheet gallery-section" aria-labelledby="galleryTitle">
+      <div class="gallery-heading">
+        <p>UN PEDACITO DE MÍ</p>
+        <h2 id="galleryTitle">GALERÍA</h2>
+        <span>Momentos para recordar</span>
+      </div>
+      <div class="polaroid-gallery">
+        <button class="polaroid" type="button" data-gallery="assets/galeria-1.jpg" aria-label="Ampliar foto divertida de Greta">
+          <img src="assets/galeria-1.jpg" alt="Greta sonriendo de forma divertida" loading="lazy">
+        </button>
+        <button class="polaroid" type="button" data-gallery="assets/galeria-2.jpg" aria-label="Ampliar foto de Greta haciendo una mueca">
+          <img src="assets/galeria-2.jpg" alt="Greta haciendo una mueca divertida" loading="lazy">
+        </button>
+        <button class="polaroid" type="button" data-gallery="assets/galeria-3.jpg" aria-label="Ampliar foto espontánea de Greta">
+          <img src="assets/galeria-3.jpg" alt="Greta en una pose espontánea" loading="lazy">
+        </button>
+        <button class="polaroid polaroid--portrait" type="button" data-gallery="assets/galeria-4.jpg" aria-label="Ampliar retrato de Greta">
+          <img src="assets/galeria-4.jpg" alt="Retrato de Greta con vestido blanco" loading="lazy">
+        </button>
+      </div>
+    </section>
+
+    <section class="sheet music-sheet" aria-label="Música">
+      <img src="assets/musica.png" alt="Música. Sumá esa canción que no puede faltar" width="943" height="1668">
+      <div class="vinyl-effect" aria-hidden="true"></div>
+      <button class="hotspot music-hotspot" data-open="musicDialog" aria-label="Agregar una canción"></button>
+    </section>
+
+    <section class="sheet" aria-label="Confirmación de asistencia">
+      <img src="assets/confirmacion.png" alt="Confirmá tu asistencia. Tenés tiempo hasta el 22 de noviembre" width="943" height="1668">
+      <button class="hotspot rsvp-hotspot" data-open="rsvpDialog" aria-label="Confirmar asistencia"></button>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <img src="assets/footer.png" alt="Hecho con amor por BloomDate. Todos los derechos reservados" width="2048" height="683">
+    <div class="footer-links" aria-label="Enlaces de BloomDate">
+      <a href="https://wa.me/" target="_blank" rel="noopener" aria-label="WhatsApp de BloomDate"></a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram de BloomDate"></a>
+      <a href="#" aria-label="Sitio web de BloomDate"></a>
+    </div>
+  </footer>
+
+  <dialog id="locationDialog" class="modal">
+    <button class="modal-close" data-close aria-label="Cerrar">×</button>
+    <p class="eyebrow">¿CÓMO QUERÉS LLEGAR?</p>
+    <h2>ESPACIO MAGNOLIA</h2>
+    <p>Av. del Libertador 2450<br>Buenos Aires</p>
+    <div class="modal-actions">
+      <a class="gold-button" href="https://www.google.com/maps/search/?api=1&query=Av.+del+Libertador+2450,+Buenos+Aires" target="_blank" rel="noopener">GOOGLE MAPS</a>
+      <a class="gold-button" href="https://www.waze.com/ul?q=Av.%20del%20Libertador%202450%2C%20Buenos%20Aires&navigate=yes" target="_blank" rel="noopener">WAZE</a>
+      <button class="outline-button" id="copyAddress">COPIAR DIRECCIÓN</button>
+    </div>
+    <p class="status" id="copyStatus" role="status"></p>
+  </dialog>
+
+  <dialog id="giftDialog" class="modal">
+    <button class="modal-close" data-close aria-label="Cerrar">×</button>
+    <p class="eyebrow">REGALOS</p>
+    <h2>GRACIAS POR ACOMPAÑARME</h2>
+    <p>Si querés hacerme un presente, podés usar estos datos:</p>
+    <div class="data-card">
+      <small>ALIAS</small>
+      <strong id="giftAlias">GRETA.XV</strong>
+      <small>TITULAR</small>
+      <strong>Greta</strong>
+    </div>
+    <button class="gold-button" id="copyGift">COPIAR ALIAS</button>
+    <p class="status" id="giftStatus" role="status"></p>
+  </dialog>
+
+  <dialog id="bloomDialog" class="modal">
+    <button class="modal-close" data-close aria-label="Cerrar">×</button>
+    <p class="eyebrow">BLOOMKEEP</p>
+    <h2>LA RED SOCIAL DE MIS XV</h2>
+    <p>El espacio para compartir fotos, mensajes y recuerdos estará disponible muy pronto.</p>
+    <button class="gold-button" data-close>ENTENDIDO</button>
+  </dialog>
+
+  <dialog id="musicDialog" class="modal">
+    <button class="modal-close" data-close aria-label="Cerrar">×</button>
+    <p class="eyebrow">MÚSICA</p>
+    <h2>¿QUÉ CANCIÓN NO PUEDE FALTAR?</h2>
+    <form id="musicForm">
+      <label>Tu nombre<input name="name" autocomplete="name" required></label>
+      <label>Canción y artista<input name="song" required></label>
+      <button class="gold-button" type="submit">AGREGAR CANCIÓN</button>
+    </form>
+    <p class="status" id="musicStatus" role="status"></p>
+  </dialog>
+
+  <dialog id="rsvpDialog" class="modal">
+    <button class="modal-close" data-close aria-label="Cerrar">×</button>
+    <p class="eyebrow">CONFIRMACIÓN</p>
+    <h2>¡TE ESPERO!</h2>
+    <form id="rsvpForm">
+      <label>Nombre y apellido<input name="name" autocomplete="name" required></label>
+      <label>¿Vas a asistir?
+        <select name="attendance" required>
+          <option value="">Elegí una opción</option>
+          <option value="Sí, voy a asistir">Sí, voy a asistir</option>
+          <option value="No podré asistir">No podré asistir</option>
+        </select>
+      </label>
+      <label>Mensaje (opcional)<textarea name="message" rows="3"></textarea></label>
+      <button class="gold-button" type="submit">ENVIAR CONFIRMACIÓN</button>
+    </form>
+    <p class="status" id="rsvpStatus" role="status"></p>
+  </dialog>
+
+  <dialog id="galleryDialog" class="gallery-lightbox">
+    <button class="modal-close gallery-lightbox__close" data-close aria-label="Cerrar foto">×</button>
+    <img id="galleryDialogImage" src="" alt="">
+  </dialog>
+
+  <button class="audio-toggle" id="audioToggle" type="button"
+    aria-label="Reproducir música" title="Reproducir música" aria-pressed="false">
+    <span class="audio-toggle__icon" aria-hidden="true">♫</span>
+    <small>MÚSICA</small>
+  </button>
+  <audio id="invitationAudio" preload="metadata" loop>
+    <source src="assets/ariana-grande.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
